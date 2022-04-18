@@ -3,13 +3,13 @@
 #
 
 # Name of your site (displayed in the header)
-name: Reverie
+name: Fernando's Blog!
 
 # Name of the author
-author: Amit Merchant
+author: Fernando Leon
 
 # Short bio or description (displayed in the header)
-description: An elegant Jekyll theme
+description: Blog where I publish what I do
 
 # URL of your avatar or profile pic (you could use your GitHub profile pic)
 avatar: /images/reverie.png
