@@ -9,7 +9,7 @@ An electric field $$\overrightarrow{E}$$ is defined as $$\frac{\overrightarrow{F
 For a positive point charge the electric field has the same direction as the electric force, pointing outwards  
 <img src="{{ site.baseurl }}/images/2022-05-10-visualizing-electric-fields/positivepoint.png">  
 And for a negative charge, the electric field goes on the opposite direction of the electric force, pointing inwards to the charge  
-<img src="{{ site.baseurl }}/images/2022-05-10-visualizing-electric-fields/positivepoint.png">  
+<img src="{{ site.baseurl }}/images/2022-05-10-visualizing-electric-fields/negativepoint.png">  
 The magnitude of these point charges calculated by using Coulomb's law, that states that the electric force magnitude between two point charges is equal to:
 
 $$ |\overrightarrow{F}|=k\frac{Qq}{r^{2}} $$  
@@ -31,11 +31,11 @@ Where $$r$$ is the distance from that particular point charge. In order to obtai
 $$ E=k\int_{a}^{b}\frac{\lambda dl}{r^{2}} $$
 
 Okay, we got the expression, but something is missing. Electric field changes according to the distance, so how do we add up almost infinite different distance dependent values? Well if we want to take a measure of the electric field from a point $$P$$  
-<img src="{{ site.baseurl }}/images/2022-05-10-visualizing-electric-fields/linechargep.png">  
+<img src="{{ site.baseurl }}/images/2022-05-10-visualizing-electric-fields/linechargep.jpg">  
 If we draw lines from the point $$P$$ towards some $$dL$$ charges and it forms an angle from the start and the end of the line charge  
-<img src="{{ site.baseurl }}/images/2022-05-10-visualizing-electric-fields/linechargepline.png">  
+<img src="{{ site.baseurl }}/images/2022-05-10-visualizing-electric-fields/linechargepline.jpg">  
 But wait, what if we split it from the middle? This way a right triangle will form, and we will be able to use trig identities to form a new integral
-<img src="{{ site.baseurl }}/images/2022-05-10-visualizing-electric-fields/linechargetrig.png">
+<img src="{{ site.baseurl }}/images/2022-05-10-visualizing-electric-fields/linechargetrig.jpg">
 Via trigonometric substitution we change $$dl$$ in terms of the angle $$d\theta$$ by first finding what's the value of $$l$$
 
 $$ cos\space\theta=\frac{z}{r}\Rightarrow r=z\frac{1}{cos\space\theta}=z\space sec\space\theta\Rightarrow r^{2}=z^2sec^2\space\theta\\
@@ -274,11 +274,11 @@ Put the oil on your tray, shape your wires, connect them to your power supply, s
 <table>
 <tbody>
       <tr>
-				<td><video width="320" height="240" autoplay muted>
+				<td><video width="540" height="513" autoplay muted>
   <source src="{{ site.baseurl }}/images/2022-05-10-visualizing-electric-fields/dipole.webm" type="video/webm">
 Your browser does not support the video tag.
 </video>   </td>
-				<td><video width="320" height="240" autoplay muted>
+				<td><video width="540" height="512" autoplay muted>
   <source src="{{ site.baseurl }}/images/2022-05-10-visualizing-electric-fields/samepole.webm" type="video/webm">
 Your browser does not support the video tag.
 </video>  </td>
