@@ -286,11 +286,11 @@ Put the oil on your tray, shape your wires, connect them to your power supply, s
 <table>
 <tbody>
       <tr>
-				<td><video width="75%" height="75%" autoplay muted>
+				<td><video width="100%" height="100%" autoplay muted>
   <source src="{{ site.baseurl }}/images/2022-05-10-visualizing-electric-fields/dipole.webm" type="video/webm">
 Your browser does not support the video tag.
 </video>   </td>
-				<td><video width="50%" height="50%" autoplay muted>
+				<td><video width="100%" height="100%" autoplay muted>
   <source src="{{ site.baseurl }}/images/2022-05-10-visualizing-electric-fields/samepole.webm" type="video/webm">
 Your browser does not support the video tag.
 </video>  </td>
