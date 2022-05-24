@@ -7,9 +7,13 @@ excerpt: An electric field $$\overrightarrow{E}$$ is defined as $$\frac{\overrig
 
 An electric field $$\overrightarrow{E}$$ is defined as $$\frac{\overrightarrow{F}}{q}$$ where $$\overrightarrow{F}$$ is the electric force and $$q$$ is the charge. The shape of the force lines in an electric field change depending on the shape and interactions that an object goes through, by this definition it means that for a point charge such as an electron or a proton, the direction of the electric field is defined by the charge  
 For a positive point charge the electric field has the same direction as the electric force, pointing outwards  
-<img src="{{ site.baseurl }}/images/2022-05-10-visualizing-electric-fields/positivepoint.png">  
+
+<img src="{{ site.baseurl }}/images/2022-05-10-visualizing-electric-fields/positivepoint.png" width="50%" height="50%">  
+
 And for a negative charge, the electric field goes on the opposite direction of the electric force, pointing inwards to the charge  
-<img src="{{ site.baseurl }}/images/2022-05-10-visualizing-electric-fields/negativepoint.png">  
+
+<img src="{{ site.baseurl }}/images/2022-05-10-visualizing-electric-fields/negativepoint.png" width="50%" height="50%">  
+
 The magnitude of these point charges calculated by using Coulomb's law, that states that the electric force magnitude between two point charges is equal to:
 
 $$ |\overrightarrow{F}|=k\frac{Qq}{r^{2}} $$  
@@ -21,7 +25,9 @@ $$ |\overrightarrow{E}|=\frac{|\overrightarrow{F}|}{q}=\frac{kQq}{r^{2}}\cdot\fr
 
 # Line charge
 We can represent the electric field of any shape by representing it as the continuous distribution of point charges across the surface of the shape, even though charge is quantized, the total number of charges on the surface is so big that we could consider it to be continuous. For example, if we want to know what is the magnitude of an electric field of a line at some point in the space, we need to represent that line with charge $$q$$ as a group of almost infinite $$\lambda$$ point charges across its length  
-<img src="{{ site.baseurl }}/images/2022-05-10-visualizing-electric-fields/linecharge1.jpg">  
+
+<img src="{{ site.baseurl }}/images/2022-05-10-visualizing-electric-fields/linecharge1.jpg" width="50%" height="50%">  
+
 This $$\lambda$$ is the value of the charge density, how many $$C$$ are there per unit length $$\lambda=\frac{q}{L}$$, by this we can say the charge $$dl$$ of the segment is equal to $$\lambda dl$$, and then we can define the electric field magnitude $dE$$ of the $$dQ$$ point charge as:
 
 $$ dE=k\frac{\lambda dl}{r^{2}} $$
@@ -31,11 +37,17 @@ Where $$r$$ is the distance from that particular point charge. In order to obtai
 $$ E=k\int_{a}^{b}\frac{\lambda dl}{r^{2}} $$
 
 Okay, we got the expression, but something is missing. Electric field changes according to the distance, so how do we add up almost infinite different distance dependent values? Well if we want to take a measure of the electric field from a point $$P$$  
-<img src="{{ site.baseurl }}/images/2022-05-10-visualizing-electric-fields/linechargep.jpg">  
+
+<img src="{{ site.baseurl }}/images/2022-05-10-visualizing-electric-fields/linechargep.jpg" width="50%" height="50%">  
+
 If we draw lines from the point $$P$$ towards some $$dL$$ charges and it forms an angle from the start and the end of the line charge  
-<img src="{{ site.baseurl }}/images/2022-05-10-visualizing-electric-fields/linechargepline.jpg">  
-But wait, what if we split it from the middle? This way a right triangle will form, and we will be able to use trig identities to form a new integral
-<img src="{{ site.baseurl }}/images/2022-05-10-visualizing-electric-fields/linechargetrig.jpg">
+
+<img src="{{ site.baseurl }}/images/2022-05-10-visualizing-electric-fields/linechargepline.jpg" width="50%" height="50%">  
+
+But wait, what if we split it from the middle? This way a right triangle will form, and we will be able to use trig identities to form a new integral  
+
+<img src="{{ site.baseurl }}/images/2022-05-10-visualizing-electric-fields/linechargetrig.jpg" width="50%" height="50%">  
+
 Via trigonometric substitution we change $$dl$$ in terms of the angle $$d\theta$$ by first finding what's the value of $$l$$
 
 $$ cos\space\theta=\frac{z}{r}\Rightarrow r=z\frac{1}{cos\space\theta}=z\space sec\space\theta\Rightarrow r^{2}=z^2sec^2\space\theta\\
@@ -78,7 +90,7 @@ v=yS;
 
 h=quiver(xS,yS,u,v,'autoscalefactor',0.6);
 ```  
-<img src="{{ site.baseurl }}/images/2022-05-10-visualizing-electric-fields/emptyfield.jpg">  
+<img src="{{ site.baseurl }}/images/2022-05-10-visualizing-electric-fields/emptyfield.jpg" width="50%" height="50%">  
 
 By using the dipole moment formula $$\overrightarrow{E}_{dipole}=k\frac{\overrightarrow{p}}{z^{3}}$$ we can compute an electric field by just adding up the electric fields of point charges, for this I just made a function that calculates the electric field at some point (x,y)  
 ```m
@@ -105,7 +117,7 @@ function efield = place_charge(q,x,y)
 end
 ```
 This is the result with some charges added to the grid (after changing u and v to the normalized components of Ex and Ey)  
-<img src="{{ site.baseurl }}/images/2022-05-10-visualizing-electric-fields/randomfield.jpg"> 
+<img src="{{ site.baseurl }}/images/2022-05-10-visualizing-electric-fields/randomfield.jpg" width="50%" height="50%"> 
 
 ## Shaped charges
 
@@ -144,7 +156,7 @@ function linefi = place_line(q,x0,y0,x1,y1)
 end
 ```
 This is what two parallel lines electric field look like:  
-<img src="{{ site.baseurl }}/images/2022-05-10-visualizing-electric-fields/linefield.jpg">  
+<img src="{{ site.baseurl }}/images/2022-05-10-visualizing-electric-fields/linefield.jpg" width="50%" height="50%">  
 Now, for the final shape we were asked how its electric field would look like, the ring. For this one I just need to place $$\frac{q}{2\pi r}$$ charges around a circle at $$r$$ distance from a point that will be our center ($$(x_0+r\space\cos\space\theta,y_0+r\space\sin\theta)$$ basically)  
 ```m
 function ringfi = place_ring(q,x,y,r)
@@ -158,7 +170,7 @@ function ringfi = place_ring(q,x,y,r)
 end
 ```
 This is what it looks like (also at this point i added a visual aid to the place_charge function)  
-<img src="{{ site.baseurl }}/images/2022-05-10-visualizing-electric-fields/ringfield.jpg">  
+<img src="{{ site.baseurl }}/images/2022-05-10-visualizing-electric-fields/ringfield.jpg" width="50%" height="50%">  
 Here is the full code for those who want to play with it
 ```m
 clear; close all; clc;
@@ -274,11 +286,11 @@ Put the oil on your tray, shape your wires, connect them to your power supply, s
 <table>
 <tbody>
       <tr>
-				<td><video width="540" height="513" autoplay muted>
+				<td><video width="50%" height="50%" autoplay muted>
   <source src="{{ site.baseurl }}/images/2022-05-10-visualizing-electric-fields/dipole.webm" type="video/webm">
 Your browser does not support the video tag.
 </video>   </td>
-				<td><video width="540" height="512" autoplay muted>
+				<td><video width="50%" height="50%" autoplay muted>
   <source src="{{ site.baseurl }}/images/2022-05-10-visualizing-electric-fields/samepole.webm" type="video/webm">
 Your browser does not support the video tag.
 </video>  </td>
