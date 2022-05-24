@@ -90,7 +90,7 @@ v=yS;
 
 h=quiver(xS,yS,u,v,'autoscalefactor',0.6);
 ```  
-<img src="{{ site.baseurl }}/images/2022-05-10-visualizing-electric-fields/emptyfield.jpg" width="50%" height="50%">  
+<img src="{{ site.baseurl }}/images/2022-05-10-visualizing-electric-fields/emptyfield.jpg">  
 
 By using the dipole moment formula $$\overrightarrow{E}_{dipole}=k\frac{\overrightarrow{p}}{z^{3}}$$ we can compute an electric field by just adding up the electric fields of point charges, for this I just made a function that calculates the electric field at some point (x,y)  
 ```m
@@ -117,7 +117,7 @@ function efield = place_charge(q,x,y)
 end
 ```
 This is the result with some charges added to the grid (after changing u and v to the normalized components of Ex and Ey)  
-<img src="{{ site.baseurl }}/images/2022-05-10-visualizing-electric-fields/randomfield.jpg" width="50%" height="50%"> 
+<img src="{{ site.baseurl }}/images/2022-05-10-visualizing-electric-fields/randomfield.jpg"> 
 
 ## Shaped charges
 
@@ -156,7 +156,7 @@ function linefi = place_line(q,x0,y0,x1,y1)
 end
 ```
 This is what two parallel lines electric field look like:  
-<img src="{{ site.baseurl }}/images/2022-05-10-visualizing-electric-fields/linefield.jpg" width="50%" height="50%">  
+<img src="{{ site.baseurl }}/images/2022-05-10-visualizing-electric-fields/linefield.jpg">  
 Now, for the final shape we were asked how its electric field would look like, the ring. For this one I just need to place $$\frac{q}{2\pi r}$$ charges around a circle at $$r$$ distance from a point that will be our center ($$(x_0+r\space\cos\space\theta,y_0+r\space\sin\theta)$$ basically)  
 ```m
 function ringfi = place_ring(q,x,y,r)
@@ -170,7 +170,7 @@ function ringfi = place_ring(q,x,y,r)
 end
 ```
 This is what it looks like (also at this point i added a visual aid to the place_charge function)  
-<img src="{{ site.baseurl }}/images/2022-05-10-visualizing-electric-fields/ringfield.jpg" width="50%" height="50%">  
+<img src="{{ site.baseurl }}/images/2022-05-10-visualizing-electric-fields/ringfield.jpg">  
 Here is the full code for those who want to play with it
 ```m
 clear; close all; clc;
@@ -286,7 +286,7 @@ Put the oil on your tray, shape your wires, connect them to your power supply, s
 <table>
 <tbody>
       <tr>
-				<td><video width="50%" height="50%" autoplay muted>
+				<td><video width="75%" height="75%" autoplay muted>
   <source src="{{ site.baseurl }}/images/2022-05-10-visualizing-electric-fields/dipole.webm" type="video/webm">
 Your browser does not support the video tag.
 </video>   </td>
