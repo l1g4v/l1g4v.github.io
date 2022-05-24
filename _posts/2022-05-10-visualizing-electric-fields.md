@@ -2,19 +2,19 @@
 layout: post
 title: Visualizing electric fields
 categories: [Physics,Experiment]
-excerpt: An electric field $$\overrightarrow{E}$$ is defined as $$\frac{\overrightarrow{F}}{q}$$ where $$\overrightarrow{F}$$ is the electric force and $$q$$ is the charge. The shape of the force lines in an electric field change depending on the shape and interactions that an object goes through, by this definition it means that for a point charge such as an electron or a proton, the direction of the electric field is defined by the charge
+excerpt: An electric field E is defined as F/q where F is the electric force and q is the charge. The shape of the force lines in an electric field change depending on the shape and interactions that an object goes through, by this definition it means that for a point charge such as an electron or a proton, the direction of the electric field is defined by the charge
 ---
 
-An electric field $$\overrightarrow{E}$$ is defined as $$\frac{\overrightarrow{F}}{q}$$ where $$\overrightarrow{F}$$ is the electric force and $$q$$ is the charge. The shape of the force lines in an electric field change depending on the shape and interactions that an object goes through, by this definition it means that for a point charge such as an electron or a proton, the direction of the electric field is defined by the charge  
-For a positive point charge the electric field has the same direction as the electric force, pointing outwards  
+An electric field $$\overrightarrow{E}$$ is defined as $$\frac{\overrightarrow{F}}{q}$$ where $$\overrightarrow{F}$$ is the electric force and $$q$$ is the charge. The shape of the force lines in an electric field changes depending on the shape and interactions that an object goes through, this means that for a point charge such as an electron or a proton, the direction of the electric field is set by the charge  
+For a positive point charge, the electric field has the same direction as the electric force, pointing outwards.  
 
 <img src="{{ site.baseurl }}/images/2022-05-10-visualizing-electric-fields/positivepoint.png" width="50%" height="50%">  
 
-And for a negative charge, the electric field goes on the opposite direction of the electric force, pointing inwards to the charge  
+And for a negative charge, the electric field goes in the opposite direction of the electric force, pointing inwards to the charge  
 
 <img src="{{ site.baseurl }}/images/2022-05-10-visualizing-electric-fields/negativepoint.png" width="50%" height="50%">  
 
-The magnitude of these point charges calculated by using Coulomb's law, that states that the electric force magnitude between two point charges is equal to:
+The magnitude of these point charges is calculated by using Coulomb's law, which states that the electric force magnitude between two point charges is equal to:
 
 $$ |\overrightarrow{F}|=k\frac{Qq}{r^{2}} $$  
 
@@ -24,7 +24,7 @@ Solving the electric field for a point charge by replacing $$\overrightarrow{F}$
 $$ |\overrightarrow{E}|=\frac{|\overrightarrow{F}|}{q}=\frac{kQq}{r^{2}}\cdot\frac{1}{q}=k\frac{Q}{r^2} $$ 
 
 # Line charge
-We can represent the electric field of any shape by representing it as the continuous distribution of point charges across the surface of the shape, even though charge is quantized, the total number of charges on the surface is so big that we could consider it to be continuous. For example, if we want to know what is the magnitude of an electric field of a line at some point in the space, we need to represent that line with charge $$q$$ as a group of almost infinite $$\lambda$$ point charges across its length  
+We can calculate the electric field of any shape by representing it as the continuous distribution of point charges across the surface of that shape even though the charge is quantized, the total number of charges on the surface can be so large that we could consider it to be continuous. For example, if we want to know what is the magnitude of an electric field of a line at some point in the space, we need to represent that line with charge $$q$$ as a group of almost infinite $$\lambda$$ point charges across its length.    
 
 <img src="{{ site.baseurl }}/images/2022-05-10-visualizing-electric-fields/linecharge1.jpg" width="50%" height="50%">  
 
@@ -32,7 +32,7 @@ This $$\lambda$$ is the value of the charge density, how many $$C$$ are there pe
 
 $$ dE=k\frac{\lambda dl}{r^{2}} $$
 
-Where $$r$$ is the distance from that particular point charge. In order to obtain that full vector we make use of the superposition principle, and it states: "Every charge in space creates an electric field at point independent of the presence of other charges in that medium. The resultant electric field is a vector sum of the electric field due to individual charges." basically what we need to do here is add up every $$dQ$$'s electric field forming the following expression:
+Where $$r$$ is the distance from that particular point charge. In order to obtain that full vector we make use of the superposition principle which states: "Every charge in space creates an electric field at point independent of the presence of other charges in that medium. The resultant electric field is a vector sum of the electric field due to individual charges." basically what we need to do here is add up every $$dQ$$'s electric field forming the following expression:
 
 $$ E=k\int_{a}^{b}\frac{\lambda dl}{r^{2}} $$
 
@@ -69,8 +69,8 @@ By this aproach we can find the electric field at the $$z$$ axis of the symmetry
 
 # Simulating electric field lines
 
-For the lab report of this class we were asked to put a simulation of what kinds of electric field lines diferent shapes of charges like line, point and ring would have, at the time no one on my team would know how to do that and luckly I found a page that did that and a teamate just did some photoshop magic to form the ring charge(https://static.bcheng.me/electric-fields/). Fortunally the less-idiot-me of today finally understands how the superposition principle can be used for this problem (also the even lesser-idiot-me knows that just a drawing that shows for example the ring electric field would be like a point charge on the outside and a -point charge on the inside ).  
-According to the sources I've read, we can represent an empty electric field space with vectors that point outwards from the origin, these vectors will suffer a transformation by adding all electric fields surrounding it. For this simulation I'll be using GNU Octave, first I wrote the code to create that empty space:  
+For the lab report of this class, we were asked to put a simulation of what kinds of electric field lines with different shapes of charges like line, point, and a ring would have, at the time no one on my team would know how to do that and luckily I found a page that did that and a teammate just did some photoshop magic to form the ring charge(https://static.bcheng.me/electric-fields/). Fortunately, the less-idiot-me of today finally understands how the superposition principle can be used for this problem (also the even lesser-idiot-me knows that just a drawing that shows for example the ring electric field would be like a point charge on the outside and a -point charge on the inside ).  
+According to the sources I've read, we can represent an empty electric field space with vectors that point outwards from the origin, these vectors will suffer a transformation by adding all-electric fields surrounding it. For this simulation I'll be using GNU Octave, first I wrote the code to create that space:  
 ```m
 clear; close all; clc;
 %grid
@@ -155,7 +155,7 @@ function linefi = place_line(q,x0,y0,x1,y1)
   end
 end
 ```
-This is what two parallel lines electric field look like:  
+This is what two parallel lines electric fields look like:  
 <img src="{{ site.baseurl }}/images/2022-05-10-visualizing-electric-fields/linefield.jpg">  
 Now, for the final shape we were asked how its electric field would look like, the ring. For this one I just need to place $$\frac{q}{2\pi r}$$ charges around a circle at $$r$$ distance from a point that will be our center ($$(x_0+r\space\cos\space\theta,y_0+r\space\sin\theta)$$ basically)  
 ```m
@@ -169,7 +169,7 @@ function ringfi = place_ring(q,x,y,r)
   endfor
 end
 ```
-This is what it looks like (also at this point i added a visual aid to the place_charge function)  
+This is what it looks like (also at this point I added a visual aid to the place_charge function)  
 <img src="{{ site.baseurl }}/images/2022-05-10-visualizing-electric-fields/ringfield.jpg">  
 Here is the full code for those who want to play with it
 ```m
@@ -279,10 +279,11 @@ There is a experiment everyone can try to visualize the electric field of any sh
 - Thick wires that you will shape however you want
 - Thiner wires to connect the thicker ones to your power supply
 
-In class we had a Wimshurst machine as our power supply because before that we were calculating the charge of two electrostatic charged pendulums (and testing if condoms are truly nonporous lol)  
+In class we had a Wimshurst machine as our power supply because before doing this we were calculating the charge of two electrostatic charged pendulums (and testing if condoms are truly nonporous lol)  
 <img src="{{ site.baseurl }}/images/2022-05-10-visualizing-electric-fields/xdd.jpg"> 
 
-Put the oil on your tray, shape your wires, connect them to your power supply, sprinkle some canary grass and crank it up  
+Put the oil on your tray, shape your wires, connect them to your power supply, sprinkle some canary grass and crank the voltage up  
+
 <table>
 <tbody>
       <tr>
@@ -298,7 +299,7 @@ Your browser does not support the video tag.
 </tbody>
 </table>  
 
-And that's it. They actually look like the simulations, with the diference that we didn't had to solve math for this one heheh. For the next post I'll continue this topic with equipotencial lines.
+And that's it. They actually look like the simulations (with the difference that we didn't have to solve math for this one hehe). For the next post, I'll continue this topic with equipotential lines.
 
  
 
