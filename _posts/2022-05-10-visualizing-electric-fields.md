@@ -28,7 +28,7 @@ We can calculate the electric field of any shape by representing it as the conti
 
 <img src="{{ site.baseurl }}/images/2022-05-10-visualizing-electric-fields/linecharge1.jpg" width="50%" height="50%">  
 
-This $$\lambda$$ is the value of the charge density, how many $$C$$ are there per unit length $$\lambda=\frac{q}{L}$$, by this we can say the charge $$dl$$ of the segment is equal to $$\lambda dl$$, and then we can define the electric field magnitude $dE$$ of the $$dQ$$ point charge as:
+This $$\lambda$$ is the value of the charge density, how many $$C$$ are there per unit length $$\lambda=\frac{q}{L}$$, by this we can say the charge $$dl$$ of the segment is equal to $$\lambda dl$$, and then we can define the electric field magnitude $$dE$$ of the $$dQ$$ point charge as:
 
 $$ dE=k\frac{\lambda dl}{r^{2}} $$
 
