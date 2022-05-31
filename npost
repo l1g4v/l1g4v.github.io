@@ -1,0 +1,21 @@
+#!/bin/bash
+echo "Post title:"
+read title
+echo "Post tags (comma separated):"
+read tags
+
+today=$( date +%Y-%m-%d )
+low=${title,,}
+filen="$today-${low// /-}"
+
+mkdir "images/$filen"
+touch "_posts/$filen.md"
+
+cat << EOF > _posts/$filen.md
+---
+layout: post
+title: $title
+categories: [$tags]
+excerpt: 
+---
+EOF
