@@ -312,6 +312,7 @@ $$
 The derivative of this function is quite interesting to compute, to make it easier let's start by computing the derivative of the first element in a 2x1 matrix
 
 $$
+\begin{matrix}
 z=\begin{bmatrix}
 v_1 \\
 v_2
@@ -321,13 +322,15 @@ v_2
 \frac{d}{dx}\frac{f}{g}=\frac{f'g-g'f}{g^2}\Rightarrow \frac{\partial \sigma(z)_1}{v_1}=\frac{e^{v_1}(e^{v_1}+e^{v_2})-e^{2v_1}}{(e^{v_1}+e^{v_2})^2}
 \\
 =\frac{e^{v_1}}{e^{v_1}+e^{v_2}}-\frac{e^{2v_1}}{(e^{v_1}+e^{v_2})^2}=\sigma(z)_1-\sigma^2(z)_1
+\end{matrix}
+$$
 $$
 
 Try doing this for more elements, and you'll find that:
 
 $$
 \frac{\partial\sigma(\overrightarrow{z})_i}{\partial z_i}=\sigma(\overrightarrow{z})_i-\sigma^2(\overrightarrow{z})_i=\sigma(\overrightarrow{z})_i(1-\sigma(\overrightarrow{z})_i)
-$$
+
 
 Then for the cost function I'll be using Cross-entropy loss:
 
