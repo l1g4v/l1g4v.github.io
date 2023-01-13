@@ -137,7 +137,7 @@ $$ C_o=\frac{1}{2}\sum_{i}^{n}(y_i-a_i) $$
 
 By using calculus we can create a gradient of our function that will tune each weight and bias in order to get closer to those expected $$y_i$$ outputs, let's see how this can be done for the weight and the bias that go from the first neuron of the second-last layer to the first neuron of our last layer:
 
-<img src="{{ site.baseurl }}/images/2023-01-09-multilayer-perceptrons-and-deep-learning/backprop_1.png" width="50%" height="50%"> 
+<img src="{{ site.baseurl }}/images/2023-01-09-multilayer-perceptrons-and-deep-learning/backprop_1.png" width="80%" height="80%"> 
 
 Using the multivariable chain rule will allow us to find how much one bias and weight affects the cost
 
@@ -249,15 +249,15 @@ Then (after averaging those vectors) we subtract by our deltas many times as nec
 
 $$
 b^1 = b^1-\gamma\delta^1
-\\
+\newline
 w^1 = w^1-\gamma\Delta w^1
-\\
+\newline
 b^2 = b^2-\gamma\delta^2
-\\
+\newline
 w^2 = w^2-\gamma\Delta w^2
-\\
+\newline
 b^3 = b^3-\gamma\delta^3
-\\
+\newline
 w^3 = w^3-\gamma\Delta w^3
 $$
 
