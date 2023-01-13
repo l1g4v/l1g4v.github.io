@@ -9,11 +9,11 @@ New year, new post. Here I am again with a new topic that I found interesting to
 ## The multilayer perceptron
 An MLP (Multilayer perceptron) is a network of "neurons" connected to one another in a forward manner from input neurons to the outputs
 
-<img src="{{ site.baseurl }}/images/2023-01-09-multilayer-perceptrons-and-deep-learning/mlp_1.png" width="50%" height="50%"> 
+<img src="{{ site.baseurl }}/images/2023-01-09-multilayer-perceptrons-and-deep-learning/mlp_1.png" width="80%" height="80%"> 
 
 The value of the neurons on each layer after the input is just a weighted sum of the values of the previous neurons passed through an activation function plus a bias. In this case for a perceptron:
 
-<img src="{{ site.baseurl }}/images/2023-01-09-multilayer-perceptrons-and-deep-learning/perceptron.png" width="50%" height="50%"> 
+<img src="{{ site.baseurl }}/images/2023-01-09-multilayer-perceptrons-and-deep-learning/perceptron.png" width="80%" height="80%"> 
 
 The term of "MLP" seems to be used to generalize any type of neural network that not necessarily uses that activation function, in the case of the network I'll explain the activation function for the hidden layers is pretty similar to the one of a perceptron.
 
@@ -175,11 +175,14 @@ $$
 We do this for the rest of functions at the top of the chain
 
 $$
-\frac{\partial C_o}{\partial w^3_{11}}=\frac{\partial C_o}{\partial a^3_1}\cdot\frac{\partial a^3_1}{\partial z^3_1}\cdot \frac{\partial z^3_1}{\partial w^3_{11}}=\frac{\partial C_o}{\partial b^3_1}\cdot\frac{\partial z^3_1}{\partial w^3_{11}}\\
+\frac{\partial C_o}{\partial w^3_{11}}=\frac{\partial C_o}{\partial a^3_1}\cdot\frac{\partial a^3_1}{\partial z^3_1}\cdot \frac{\partial z^3_1}{\partial w^3_{11}}=\frac{\partial C_o}{\partial b^3_1}\cdot\frac{\partial z^3_1}{\partial w^3_{11}}
+\\
 
-\frac{\partial C_o}{\partial a^2_{1}}=\frac{\partial C_o}{\partial a^3_1}\cdot\frac{\partial a^3_1}{\partial z^3_1}\cdot \frac{\partial z^3_1}{\partial a^2_{1}}=\frac{\partial C_o}{\partial b^3_1}\cdot\frac{\partial z^3_1}{\partial a^2_{1}}\\
+\frac{\partial C_o}{\partial a^2_{1}}=\frac{\partial C_o}{\partial a^3_1}\cdot\frac{\partial a^3_1}{\partial z^3_1}\cdot \frac{\partial z^3_1}{\partial a^2_{1}}=\frac{\partial C_o}{\partial b^3_1}\cdot\frac{\partial z^3_1}{\partial a^2_{1}}
+\\
 
-\Rightarrow \frac{\partial z^3_1}{\partial w^3_{11}}=a^2_1,\space \frac{\partial z^3_1}{\partial a^3_{2}}=w^3_{11}\\
+\Rightarrow \frac{\partial z^3_1}{\partial w^3_{11}}=a^2_1,\space \frac{\partial z^3_1}{\partial a^3_{2}}=w^3_{11}
+\\
 
 \Rightarrow \frac{\partial C_o}{\partial w^3_{11}}=a^2_1(y_1-a^3_1)f'(z^3_1), \space \frac{\partial C_o}{\partial a^2_{1}}=w^3_{11}(y_1-a^3_1)f'(z^3_1)
 $$
@@ -219,7 +222,8 @@ w^3_{21}a^2_1+w^3_{21}a^2_2
 \end{bmatrix}+\begin{bmatrix}
 b^3_1 \\
 b^3_2
-\end{bmatrix}=w^3a^2+b^3\\
+\end{bmatrix}=w^3a^2+b^3
+\\
 \Rightarrow \delta³=\Delta C_o\odot f'(z^3)
 \\
 \odot \space is\space elementwise\space multiplication
@@ -244,12 +248,17 @@ $$
 Then (after averaging those vectors) we subtract by our deltas many times as necessary to bring the loss to a minimum
 
 $$
-b^1 = b^1-\gamma\delta^1\\
-w^1 = w^1-\gamma\Delta w^1\\
-b^2 = b^2-\gamma\delta^2\\
-w^2 = w^2-\gamma\Delta w^2\\
-b^3 = b^3-\gamma\delta^3\\
-w^3 = w^3-\gamma\Delta w^3\\
+b^1 = b^1-\gamma\delta^1
+\\
+w^1 = w^1-\gamma\Delta w^1
+\\
+b^2 = b^2-\gamma\delta^2
+\\
+w^2 = w^2-\gamma\Delta w^2
+\\
+b^3 = b^3-\gamma\delta^3
+\\
+w^3 = w^3-\gamma\Delta w^3
 $$
 
 It's very important to note that since we initialize the weights and biases with random values it's possible that we won't find the global minima of the loss.
@@ -288,9 +297,11 @@ $$
 z=\begin{bmatrix}
 v_1 \\
 v_2
-\end{bmatrix},\space \sigma(z)_1=\frac{e^{v_1}}{e^{v_1}+e^{v_2}}\\
+\end{bmatrix},\space \sigma(z)_1=\frac{e^{v_1}}{e^{v_1}+e^{v_2}}
+\\
 
-\frac{d}{dx}\frac{f}{g}=\frac{f'g-g'f}{g^2}\Rightarrow \frac{\partial \sigma(z)_1}{v_1}=\frac{e^{v_1}(e^{v_1}+e^{v_2})-e^{2v_1}}{(e^{v_1}+e^{v_2})^2}\\
+\frac{d}{dx}\frac{f}{g}=\frac{f'g-g'f}{g^2}\Rightarrow \frac{\partial \sigma(z)_1}{v_1}=\frac{e^{v_1}(e^{v_1}+e^{v_2})-e^{2v_1}}{(e^{v_1}+e^{v_2})^2}
+\\
 =\frac{e^{v_1}}{e^{v_1}+e^{v_2}}-\frac{e^{2v_1}}{(e^{v_1}+e^{v_2})^2}=\sigma(z)_1-\sigma^2(z)_1
 $$
 
@@ -581,7 +592,7 @@ end
 
 After ~4h of training the accuracy capped at 93.2%
 
-<img src="{{ site.baseurl }}/images/2023-01-09-multilayer-perceptrons-and-deep-learning/accuracy.png" width="50%" height="50%"> 
+<img src="{{ site.baseurl }}/images/2023-01-09-multilayer-perceptrons-and-deep-learning/accuracy.png" width="100%" height="100%"> 
 
 From here I wanted to see how it would do with numbers made by me, so I made another function to load an image and feed it to the network
 
@@ -615,7 +626,7 @@ disp(load_and_feed_foward("number.jpg"))
 
 For the images I created a 28x28 grayscale canvas in GIMP and then whenever I wanted to test another drawing I just re-exported it in .jpg
 
-<img src="{{ site.baseurl }}/images/2023-01-09-multilayer-perceptrons-and-deep-learning/gimp.png" width="50%" height="50%"> 
+<img src="{{ site.baseurl }}/images/2023-01-09-multilayer-perceptrons-and-deep-learning/gimp.png" width="80%" height="80%"> 
 
 After playing with it a bit I noticed that the network classified numbers better if they were drawn below (0,5), also it has the tendency to mark 8's as 5's for some reason. That's all for this post and I hope you find this topic interesting
 (Here's the file with the 93.2% accuracy weights and biases data: INSERT_URL)
