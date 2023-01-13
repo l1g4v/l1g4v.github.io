@@ -325,14 +325,14 @@ v_2
 \\
 =\frac{e^{v_1}}{e^{v_1}+e^{v_2}}-\frac{e^{2v_1}}{(e^{v_1}+e^{v_2})^2}=\sigma(z)_1-\sigma^2(z)_1
 \end{matrix}
-$$
+
 $$
 
 Try doing this for more elements, and you'll find that:
 
 $$
 \frac{\partial\sigma(\overrightarrow{z})_i}{\partial z_i}=\sigma(\overrightarrow{z})_i-\sigma^2(\overrightarrow{z})_i=\sigma(\overrightarrow{z})_i(1-\sigma(\overrightarrow{z})_i)
-
+$$
 
 Then for the cost function I'll be using Cross-entropy loss:
 
