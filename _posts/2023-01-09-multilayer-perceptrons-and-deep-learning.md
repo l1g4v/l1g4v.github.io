@@ -158,23 +158,28 @@ $$
 We know that
 
 $$
+\begin{matrix}
 C_o=\frac{1}{2}[(y_1-a^3_1)^2+(y_2-a^3_2)^2]\\
 z^3_1=(a^2_1w^3_{11}+a^2_2w^3_{12}+a^2_3w^3_{13})+b^3_1\\
 a^3_1=f(z^3_1)
+\end{matrix}
 $$
 
 So the derivatives of those functions with respect to what's needed end up being:
 
 $$
+\begin{matrix}
 \frac{\partial C_o}{\partial a^3_1}=(y_1-a^3_1),\space
 \frac{\partial a^3_1}{\partial z^3_1}=f'(z^3_1),\space
 \frac{\partial z^3_1}{\partial b^3_1}=1
 \\ \Rightarrow \frac{\partial C_o}{\partial b^3_1}=(y_1-a^3_1)f'(z^3_1)
+\end{matrix}
 $$
 
 We do this for the rest of functions at the top of the chain
 
 $$
+\begin{matrix}
 \frac{\partial C_o}{\partial w^3_{11}}=\frac{\partial C_o}{\partial a^3_1}\cdot\frac{\partial a^3_1}{\partial z^3_1}\cdot \frac{\partial z^3_1}{\partial w^3_{11}}=\frac{\partial C_o}{\partial b^3_1}\cdot\frac{\partial z^3_1}{\partial w^3_{11}}
 \\
 
@@ -185,6 +190,7 @@ $$
 \\
 
 \Rightarrow \frac{\partial C_o}{\partial w^3_{11}}=a^2_1(y_1-a^3_1)f'(z^3_1), \space \frac{\partial C_o}{\partial a^2_{1}}=w^3_{11}(y_1-a^3_1)f'(z^3_1)
+\end{matrix}
 $$
 
 And just like this, work your way up to the inputs with each neuron, bias and weight
@@ -194,9 +200,11 @@ And just like this, work your way up to the inputs with each neuron, bias and we
 Since a network will usually deal with a lot of possible results, we need to average these derivatives over all training samples and only then, substract to the weight or  bias that averaged derivative multiplied by some factor $$\gamma$$
 
 $$
+\begin{matrix}
 b^L_k=b^L_k-\gamma \cdot \frac{1}{s}\sum_{}^{s} \frac{\partial C_o}{\partial b^L_k}\\
 
 w^L_{kn}=w^L_{kn}-\gamma \cdot \frac{1}{s}\sum_{}^{s} \frac{\partial C_o}{\partial w^L_{kn}}
+\end{matrix}
 $$
 
 ## Computing with matrices
@@ -213,6 +221,7 @@ $$
 To compute this $$\delta^3$$ we do the same thing as if it were a single bias, with the difference that we'll be doing element-wise operations with vectors
 
 $$
+\begin{matrix}
 \Delta C_o=\begin{bmatrix}
 y_1-a^3_1 \\
 y_2-a^3_2
@@ -227,38 +236,47 @@ b^3_2
 \Rightarrow \delta³=\Delta C_o\odot f'(z^3)
 \\
 \odot \space is\space elementwise\space multiplication
+\end{matrix}
 $$
 
 From here we compute $$\Delta w^3$$ and $$\delta^2$$ for it to be used on the previous layer
 
 $$
+\begin{matrix}
 \Delta w^3=\delta^3(a^2)^T
 \\
 \delta^2=(w^3)^T\delta^3 \odot f'(z^2)
+\end{matrix}
 $$
 
 And we work our way to the inputs
 
 $$
+\begin{matrix}
 \Delta w^2=\delta^3(a^1)^T\\
 \delta^1=(w^2)^T\delta^2 \odot f'(z^1)\\
 \Delta w^1=\delta^1i^T
+\end{matrix}
 $$
 
 Then (after averaging those vectors) we subtract by our deltas many times as necessary to bring the loss to a minimum
 
 $$
+\begin{matrix}
+
 b^1 = b^1-\gamma\delta^1
-\newline
+\\
 w^1 = w^1-\gamma\Delta w^1
-\newline
+\\
 b^2 = b^2-\gamma\delta^2
-\newline
+\\
 w^2 = w^2-\gamma\Delta w^2
-\newline
+\\
 b^3 = b^3-\gamma\delta^3
-\newline
+\\
 w^3 = w^3-\gamma\Delta w^3
+
+\end{matrix}
 $$
 
 It's very important to note that since we initialize the weights and biases with random values it's possible that we won't find the global minima of the loss.
