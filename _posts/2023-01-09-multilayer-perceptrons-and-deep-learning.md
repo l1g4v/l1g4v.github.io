@@ -290,6 +290,7 @@ The apparent "Hello world!" of machine learning. The idea is to take a 28x28 ima
 The network will composed of four layers: 784 inputs (flattened 28x28 image matrix), two 16 neuron hidden layers and 10 neurons output. The activation function for the hidden layers will be the $$ReLU$$. This function and its derivative are very easy to compute:
 
 $$
+\begin{matrix}
 ReLU(x)=\left\{ \begin{array}{cl}
 x & : \ x \geq 0 \\
 0 & : \ x < 0
@@ -301,6 +302,7 @@ ReLU'(x)=\left\{ \begin{array}{cl}
 1 & : \ x \geq 0 \\
 0 & : \ x < 0
 \end{array} \right.
+\end{matrix}
 $$
 
 Since this is a classifier I'll be using the softmax function at the outputs, this will turn the values of the output to a way that everything adds to 1, so each value of the output is a probability of the image being that number
