@@ -145,7 +145,10 @@ Doing this all the way to the outputs will give you the prediction of the networ
 
 Deep learning is a set of rules defining how our network will "learn" to give the best possible output. We can see our network as a function that takes X inputs, N biases and M weights, process them and gives out an output vector. In order to train it, we need to have a large set of data that will have a series of inputs and the expected output, from here finding how far the predictions are from the expected outputs will allow us to tune the weights and biases until we start getting the predictions we want. Backpropagation does this by finding how much each parameter of the network affects the value of some cost function and reducing it. For this example our cost function will be:
 
-$$ C_o=\frac{1}{2}\sum_{i}^{n}(y_i-a_i) $$
+$$ 
+C_o=\frac{1}{2}\sum_{i}^{n}(y_i-a_i)^2
+$$
+
 <!-- 87 score -->
 By using calculus we can create a gradient of our function that will allow us to tune each weight and bias in order to get each output $$a_i$$ closer to those expected $$y_i$$ outputs. Let's see how is done for the weights and biases that go from the first neuron of the second-last layer to the first neuron of our last layer:
 
