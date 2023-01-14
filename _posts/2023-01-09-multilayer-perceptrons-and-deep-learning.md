@@ -301,7 +301,7 @@ The apparent "Hello world!" of machine learning. The idea is to take a 28x28 ima
 
 This network will have four layers: 784 inputs (flattened 28x28 image matrix), two 16 neuron hidden layers, and 10 neurons output. 
 
-<img src="{{ site.baseurl }}/images/2023-01-09-multilayer-perceptrons-and-deep-learning/network.svg" width="80%" height="50%"> 
+<img src="{{ site.baseurl }}/images/2023-01-09-multilayer-perceptrons-and-deep-learning/network.svg" width="85%" height="50%"> 
 
 The activation function for the hidden layers will be the $$ReLU$$. This function and its derivative are easy to compute:
 
