@@ -2,7 +2,7 @@
 layout: post
 title: Multilayer perceptrons, deep learning and number recognition
 categories: [Calculus,Machine Learning,Linear Algebra]
-excerpt: 
+excerpt: New year, new post. Here I am again with a new topic that I found interesting to read after watching the videos of 3Blue1Brown on deep learning. It seems like the "Hello world!" of machine learning is making a neural network that recognizes handwritten digits, so today's post will be about that.
 ---
 
 <script type="text/x-mathjax-config">
