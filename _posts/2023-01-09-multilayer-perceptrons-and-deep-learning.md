@@ -1,13 +1,25 @@
 ---
 layout: post
 title: Multilayer perceptrons, deep learning and number recognition
-categories: [Calculus,Deep Learning,AI,Linear Algebra]
+categories: [Calculus,Machine Learning,Linear Algebra]
 excerpt: 
 ---
+
+<script type="text/x-mathjax-config">
+
+MathJax.Hub.Config({
+tex2jax: { inlineMath: [["$","$"],["\\(","\\)"]] },
+"HTML-CSS": {
+  linebreaks: { automatic: true, width: "container" }          
+}              
+});
+
+</script>
+
 New year, new post. Here I am again with a new topic that I found interesting to read after watching the videos of 3Blue1Brown on deep learning. It seems like the "Hello world!" of machine learning is making a neural network that recognizes handwritten digits, so today's post will be about that.
 
 ## The multilayer perceptron
-An MLP (Multilayer perceptron) is a network of "neurons" connected to one another in a forward manner from input neurons to the outputs
+An MLP (Multilayer perceptron) is a network of "neurons" connected in a forward manner from input neurons to the outputs.
 
 <img src="{{ site.baseurl }}/images/2023-01-09-multilayer-perceptrons-and-deep-learning/mlp_1.png" width="80%" height="80%"> 
 
@@ -15,11 +27,11 @@ The value of the neurons on each layer after the input is just a weighted sum of
 
 <img src="{{ site.baseurl }}/images/2023-01-09-multilayer-perceptrons-and-deep-learning/perceptron.png" width="80%" height="80%"> 
 
-The term of "MLP" seems to be used to generalize any type of neural network that not necessarily uses that activation function, in the case of the network I'll explain the activation function for the hidden layers is pretty similar to the one of a perceptron.
+The term "MLP" seems to be used to generalize any neural network that not necessarily uses that activation function. Later I'll show an interesting activation function that's pretty similar to this one of a perceptron
 
 ## Feedfowarding to the outputs
 
-The beauty of this topic is that everything is pretty much linear algebra and calculus. If we represent every weight, bias, and value of a neuron per layer using a matrix, then we can use simple matrix operations to work our way to the outputs. For this I'll use the superscript as the layer and the subscript as the output $$a$$ of the neuron and bias $$b$$
+The beauty of this topic is that everything is basically linear algebra and calculus. If we represent every weight, bias, and the value of a neuron per layer using a matrix, then we can use simple matrix operations to work our way to the outputs. For this, I'll use the superscript as the layer and the subscript as the output $$a$$ of the neuron and bias $$b$$
 
 $$ \begin{bmatrix}
 a^0_1 \\
@@ -61,7 +73,7 @@ b^3_2
 
 $$
 
-For the weights the superscript will indicate to which layer they are connecting to and the subscript will indicate the connection of the neuron n to the neuron m of the previous layer
+For the weights, the superscript will indicate to which layer they are connecting, and the subscript will show the connection of the neuron n to the neuron m of the previous layer
 
 $$
 
@@ -88,7 +100,7 @@ w^2{11} & w^2{12} & w^2{13} \\
 
 $$
 
-Given the rules of matrix multiplication, if for example we multiply the inputs by the weights that connect to the next layer we will get a matrix of size 3x1, the same number of neurons of our next layer.
+Given the rules of matrix multiplication, for example, we multiply the inputs by the weights that connect to the next layer then we will get a matrix of size 3x1, the same number of neurons of our next layer.
 
 $$
 \begin{bmatrix}
@@ -109,7 +121,7 @@ a^0_1w^1_{31} + a^0_2w^1_{32} + a^0_3w^1_{33} + a^0_4w^1_{34} + a^0_5w^1_{35}
 \end{bmatrix}
 $$
 
-Then adding the bias and applying our activation function $$f$$ element-wise to the resulting vector will give us the value of the neurons of our first hidden layer. 
+Then adding the bias and applying our activation function $$f$$ element-wise to the resulting vector will give us the value of the neurons for our first hidden layer.
 
 $$
 f\left(  \begin{bmatrix}
@@ -127,15 +139,15 @@ a^1_3
 \end{bmatrix}
 $$
 
-Do this all the way to the outputs you'll get the prediction of the network with its currents weights and biases. It could be right or it could be wrong.
+Doing this all the way to the outputs will give you the prediction of the network with its current weights and biases. It could be right, or it could be wrong.
 
 ## Deep learning (with backpropagation)
 
-Deep learning is just a set of rules that will define how our network will "learn" to give the best possible output. We can see our network as a function that takes X inputs, N biases and M weights, process them and gives out a vector of outputs. In order to train our network we need to have a large set of data that will have a series of inputs and the expected output, finding how far the predictions are from the expected outputs will allow us to tune the weights and biases until we start getting the predictions we want. Backpropagation does this by finding how much each parameter of the network affects the value of some cost function and reducing it. For this example our cost function will be:
+Deep learning is a set of rules defining how our network will "learn" to give the best possible output. We can see our network as a function that takes X inputs, N biases and M weights, process them and gives out an output vector. In order to train it, we need to have a large set of data that will have a series of inputs and the expected output, from here finding how far the predictions are from the expected outputs will allow us to tune the weights and biases until we start getting the predictions we want. Backpropagation does this by finding how much each parameter of the network affects the value of some cost function and reducing it. For this example our cost function will be:
 
 $$ C_o=\frac{1}{2}\sum_{i}^{n}(y_i-a_i) $$
-
-By using calculus we can create a gradient of our function that will tune each weight and bias in order to get closer to those expected $$y_i$$ outputs, let's see how this can be done for the weight and the bias that go from the first neuron of the second-last layer to the first neuron of our last layer:
+<!-- 87 score -->
+By using calculus we can create a gradient of our function that will allow us to tune each weight and bias in order to get each output $$a_i$$ closer to those expected $$y_i$$ outputs. Let's see how is done for the weights and biases that go from the first neuron of the second-last layer to the first neuron of our last layer:
 
 <img src="{{ site.baseurl }}/images/2023-01-09-multilayer-perceptrons-and-deep-learning/backprop_1.png" width="80%" height="80%"> 
 
@@ -143,7 +155,7 @@ Using the multivariable chain rule will allow us to find how much one bias and w
 
 <img src="{{ site.baseurl }}/images/2023-01-09-multilayer-perceptrons-and-deep-learning/backprop_2.png" width="50%" height="50%"> 
 
-Let's say we want to find first how much that bias affects the cost, we'll have to compute the derivative of the cost with respect to the bias
+Let's say we want to find how much that bias affects the cost. This can done by computing the derivative of the cost with respect to the bias.
 
 $$
 \frac{\partial C_o}{\partial b^3_1}
@@ -197,7 +209,7 @@ And just like this, work your way up to the inputs with each neuron, bias and we
 
 <img src="{{ site.baseurl }}/images/2023-01-09-multilayer-perceptrons-and-deep-learning/backprop_3.png" width="50%" height="50%"> 
 
-Since a network will usually deal with a lot of possible results, we need to average these derivatives over all training samples and only then, substract to the weight or  bias that averaged derivative multiplied by some factor $$\gamma$$
+Since a network will usually deal with a lot of possible results, we need to average these derivatives over all training samples and only then, subtract to the weight or  bias that averaged derivative multiplied by some factor $$\gamma$$
 
 $$
 \begin{matrix}
@@ -209,7 +221,7 @@ $$
 
 ## Computing with matrices
 
-Once again, these operations for all weights and biases can be done "all at once" using matrices. This will allow us to use libraries that are very optimized for matrix operations and linear algebra in general, this way will now be forming matrices/vectors to do operations. As you have seen, to compute the derivative of weight and previous neuron just multiply the derivative of the bias by the value of the previous neuron and weight respectively, so we create a new vector $$\delta^l$$ that will be composed of the bias derivatives of each neuron in the layer $$l$$
+Once again, these operations for all weights and biases can be done "all at once" per layer using matrices, allowing us to use libraries optimized for matrix operations and linear algebra. So now we will make matrices/vectors to do these layer operations. As you have seen, to compute the derivative of weight and previous neuron, multiply the derivative of the bias by the value of the previous neuron or weight, this way we create a new vector $$\delta^l$$ that will be composed of the bias derivatives of each neuron in the layer $$l$$
 
 $$
 \delta^3=\begin{bmatrix}
@@ -218,7 +230,7 @@ b^3_2
 \end{bmatrix}
 $$
 
-To compute this $$\delta^3$$ we do the same thing as if it were a single bias, with the difference that we'll be doing element-wise operations with vectors
+To compute this $$\delta^3$$ we do the same thing as if it were a single bias, with the difference that we'll be doing element-wise operations with vectors/matrices.
 
 $$
 \begin{matrix}
@@ -287,7 +299,11 @@ The apparent "Hello world!" of machine learning. The idea is to take a 28x28 ima
 
 <img src="https://upload.wikimedia.org/wikipedia/commons/2/27/MnistExamples.png" width="95%" height="50%"> 
 
-The network will composed of four layers: 784 inputs (flattened 28x28 image matrix), two 16 neuron hidden layers and 10 neurons output. The activation function for the hidden layers will be the $$ReLU$$. This function and its derivative are very easy to compute:
+This network will have four layers: 784 inputs (flattened 28x28 image matrix), two 16 neuron hidden layers, and 10 neurons output. 
+
+<img src="{{ site.baseurl }}/images/2023-01-09-multilayer-perceptrons-and-deep-learning/network.svg" width="80%" height="50%"> 
+
+The activation function for the hidden layers will be the $$ReLU$$. This function and its derivative are easy to compute:
 
 $$
 \begin{matrix}
@@ -368,7 +384,7 @@ a_2-y_2
 \end{bmatrix}
 $$
 
-I don't know the best way to explain this, but by abusing the fact that this is a classification problem $$y$$ will always be a matrix where only one element is equal to 1 and the rest are zeros, the sum is always one so we can simplify $$\delta$$ to (a more correct explanation here: https://deepnotes.io/softmax-crossentropy):
+I don't know the best way to explain this, but by abusing the fact that this is a classification problem $$y$$ will always be a matrix where only one element is equal to 1 and the rest are zeros, the sum is always one so we can simplify $$\delta$$ to (a more detailed explanation [here](https://deepnotes.io/softmax-crossentropy)):
 
 $$
 \delta=a-y
@@ -376,7 +392,7 @@ $$
 
 ## Implementation
 
-Once again I'll be using GNU Octave because libBLAS is a thing and there's no need to reinvent the wheel. I got the training and test dataset here: https://pjreddie.com/projects/mnist-in-csv/
+Once again I'll be using GNU Octave because libBLAS is a thing and there's no need to reinvent the wheel. I got the training and test dataset from [here](https://pjreddie.com/projects/mnist-in-csv/).
 
 ```m
 old_state = warning ("off", "Octave:shadowed-function");
@@ -384,7 +400,7 @@ pkg load statistics
 pkg load io
 warning (old_state);
 
-#global A_1=unifrnd(-1, 1,[784 1]);  #= unifrnd(-1, 1,[784 1])
+#A_1 (inputs) = [784 1]
 global A_2=double(unifrnd(0,1,[16 1]));
 global A_3=double(unifrnd(0,1,[16 1]));
 global A_4=double(unifrnd(0,1,[10 1]));
@@ -617,7 +633,7 @@ After ~4h of training the accuracy capped at 93.2%
 
 <img src="{{ site.baseurl }}/images/2023-01-09-multilayer-perceptrons-and-deep-learning/accuracy.png" width="100%" height="100%"> 
 
-From here I wanted to see how it would do with numbers made by me, so I made another function to load an image and feed it to the network
+From here I wanted to see how it would do with numbers made by me, so I wrote a function to load an image and feed it to the network (I had to rotate the image since the images in the dataset were rotated 270°).
 
 ```m
 function y = load_and_feed_foward(filename)
@@ -651,6 +667,6 @@ For the images I created a 28x28 grayscale canvas in GIMP and then whenever I wa
 
 <img src="{{ site.baseurl }}/images/2023-01-09-multilayer-perceptrons-and-deep-learning/gimp.png" width="80%" height="80%"> 
 
-After playing with it a bit I noticed that the network classified numbers better if they were drawn below (0,5), also it has the tendency to mark 8's as 5's for some reason. That's all for this post and I hope you find this topic interesting
-(Here's the file with the 93.2% accuracy weights and biases data: INSERT_URL)
+After playing with it a bit I noticed that the network classified numbers better if they were drawn below (0,5), also it has the tendency to mark 8's as 5's for some reason. That's it for this post and I hope you find this topic interesting.
+(Get the tuned weights and biases [here](https://raw.githubusercontent.com/l1g4v/l1g4v.github.io/master/images/2023-01-09-multilayer-perceptrons-and-deep-learning/network.mat)).
 

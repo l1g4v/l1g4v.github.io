@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Visualizing electric fields
-categories: [Physics,Simulation,Experiment]
+categories: [Physics,Simulation,Experiment,Calculus]
 excerpt: An electric field E is defined as F/q where F is the electric force and q is the charge. The shape of the force lines in an electric field change depending on the shape and interactions that an object goes through, by this definition it means that for a point charge such as an electron or a proton, the direction of the electric field is defined by the charge
 ---
 
