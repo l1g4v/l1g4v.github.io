@@ -403,24 +403,22 @@ pkg load statistics
 pkg load io
 warning (old_state);
 
-#A_1 (inputs) = [784 1]
+%A_1=[784 1] 
 global A_2=double(unifrnd(0,1,[16 1]));
 global A_3=double(unifrnd(0,1,[16 1]));
 global A_4=double(unifrnd(0,1,[10 1]));
 
 
 global W_12 = double(unifrnd(0,1,[16 784]));
-
 global B_2  = double(unifrnd(0,1,[16 1]));
 
 global W_23 = double(unifrnd(0,1,[16 16]));
-
 global B_3  = double(unifrnd(0,1,[16 1]));
 
 global W_34 = double(unifrnd(0,1,[10 16]));
 global B_4  = double(unifrnd(0,1,[10 1]));
 
-#Activations
+%Activations
 function y = relu(x)
     y = max(0, x);
 end
@@ -434,7 +432,7 @@ function y = softmax(x)
     y = exp(s) ./ sum(exp(s));
 end
 
-#Backpropagation
+%Backpropagation
 function [d_bias_4,d_weight_4, d_bias_3,d_weight_3, d_bias_2,d_weight_2]=backpropagate(inputs,outputs)
     global A_2;
     global A_3;
@@ -455,7 +453,7 @@ function [d_bias_4,d_weight_4, d_bias_3,d_weight_3, d_bias_2,d_weight_2]=backpro
     z_4=(W_34*A_3)+B_4;
     A_4=softmax(z_4);
 
-    #(1 / size(inputs, 2)) is just to scale the gradient
+    %1 / size(inputs, 2) is just to scale the gradient
     d_cost = A_4 - outputs;
     d_weight_4 = (1 / size(inputs, 2)) * d_cost * A_3';
     d_bias_4 = (1 / size(inputs, 2))*d_cost;
@@ -499,7 +497,7 @@ function [d_b4,d_w4, d_b3,d_w3, d_b2,d_w2] = GradientDescent(inputs,outputs,lear
         d_w2 = d_w2 + d_w2_;
     end
 
-    #average deltas
+    %average deltas
     d_b4 = d_b4 / batch_size;
     d_w4 = d_w4 / batch_size;
     d_b3 = d_b3 / batch_size;
@@ -507,7 +505,7 @@ function [d_b4,d_w4, d_b3,d_w3, d_b2,d_w2] = GradientDescent(inputs,outputs,lear
     d_b2 = d_b2 / batch_size;
     d_w2 = d_w2 / batch_size;
 
-    #update parameters
+    %update parameters
     W_34 = W_34 - (learning_rate) * d_w4;
     B_4 = B_4 - (learning_rate) * d_b4;
     W_23 = W_23 - (learning_rate) * d_w3;
@@ -516,7 +514,7 @@ function [d_b4,d_w4, d_b3,d_w3, d_b2,d_w2] = GradientDescent(inputs,outputs,lear
     B_2 = B_2 - (learning_rate) * d_b2;
 end
 
-#Utility
+%Utility
 global last_acc=0;
 
 function save_network()
@@ -556,7 +554,7 @@ function [images, outputs] = load_mnist_data(filename)
     end
 end
 
-#Evaluation
+%Evaluation
 function feed_foward(inputs)
     global A_2;
     global A_3;
@@ -578,7 +576,7 @@ function feed_foward(inputs)
     A_4=softmax(z_4);
 endfunction
 
-#Test accuracy and save network parameters if it improved
+%Test accuracy and save network parameters if it improved
 function y=test(inputs,outputs)
     global A_2;
     global A_3;
@@ -610,16 +608,16 @@ function y=test(inputs,outputs)
     y=acc;
 end
 
-#Training
+%Training
 train=true;
 epochs=10000;
 
 if(train)
-    #load the data (0-255 to 0-1)
+    %load the data (0-255 to 0-1)
     [images, labels] = load_mnist_data("mnist_train.csv");
     images = images / 255;
 
-    #load test data (0-255 to 0-1)
+    %load test data (0-255 to 0-1)
     [test_images, test_labels] = load_mnist_data("mnist_test.csv");
     test_images = test_images / 255;
     test(test_images', test_labels);
@@ -666,7 +664,7 @@ load_network();
 disp(load_and_feed_foward("number.jpg"))
 ```
 
-For the images I created a 28x28 grayscale canvas in GIMP and then whenever I wanted to test another drawing I just re-exported it in .jpg
+For the images I created a 28x28 grayscale canvas in GIMP and then whenever I wanted to test another drawing I just re-exported it as number.jpg
 
 <img src="{{ site.baseurl }}/images/2023-01-09-multilayer-perceptrons-and-deep-learning/gimp.png" width="80%" height="80%"> 
 
