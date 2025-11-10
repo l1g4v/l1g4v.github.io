@@ -7,22 +7,20 @@ permalink: /portfolio/
 <p>Welcome to my portfolio! Here you'll find a collection of my projects, skills, and experiences.</p>
 
 
-<div class="portfolio-posts">
-  {% for portfolio in paginator.portfolios %}
-    <article class="portfolio">
-      <a href="{{ site.baseurl }}{{ portfolio.url }}">
-        <h1>{{ portfolio.title }}</h1>
-
-        <div>
-          <p class="portfolio_date">{{ portfolio.date | date: "%B %e, %Y" }}</p>
-        </div>
+<div class="posts">
+  {% for post in paginator.posts %}
+  {% if post.is_work %}
+    <article class="post">
+      <a href="{{ site.baseurl }}{{ post.url }}">
+        <h1>{{ post.title }}</h1>
       </a>
       <div class="entry">
-        {{ portfolio.excerpt }}
+        {{ post.excerpt }}
       </div>
 
-      <a href="{{ site.baseurl }}{{ portfolio.url }}" class="read-more">Read More</a>
+      <a href="{{ site.baseurl }}{{ post.url }}" class="read-more">Read More</a>
     </article>
+  {% endif %}
   {% endfor %}
 
   <!-- pagination -->

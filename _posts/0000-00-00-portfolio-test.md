@@ -3,6 +3,7 @@ layout: post
 title: Ohm's law
 categories: [Physics,Data gathering,Experiment]
 excerpt: The semester is almost finished, so I finally get a change to upload something to this blog, I'll begin with the first things we saw on the "Laboratory of electromagnetic devices" class. For this class session we were asked
+is_work: true
 ---
 
 The semester is almost finished, so I finally get a change to upload something to this blog, I'll begin with the first things we saw on the "Laboratory of electromagnetic devices" class.  
@@ -13,136 +14,136 @@ For this class session we were asked "How does the electric resistance of a wire
 <tr><td>
 
 <table class="centerfy">
-        <thead>
+		<thead>
+			<tr>
+				<th>Length</th>
+				<th>Resistance</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>5</td>
+				<td>2.3</td>
+			</tr>
+			<tr>
+				<td>10</td>
+				<td>3.1</td>
+			</tr>
             <tr>
-                <th>Length</th>
-                <th>Resistance</th>
-            </tr>
-        </thead>
-        <tbody>
+				<td>15</td>
+				<td>4.0</td>
+			</tr>
+			<tr>
+				<td>20</td>
+				<td>4.9</td>
+			</tr>
             <tr>
-                <td>5</td>
-                <td>2.3</td>
-            </tr>
+				<td>25</td>
+				<td>5.8</td>
+			</tr>
+			<tr>
+				<td>30</td>
+				<td>6.4</td>
+			</tr>
             <tr>
-                <td>10</td>
-                <td>3.1</td>
-            </tr>
-            <tr>
-                <td>15</td>
-                <td>4.0</td>
-            </tr>
-            <tr>
-                <td>20</td>
-                <td>4.9</td>
-            </tr>
-            <tr>
-                <td>25</td>
-                <td>5.8</td>
-            </tr>
-            <tr>
-                <td>30</td>
-                <td>6.4</td>
-            </tr>
-            <tr>
-                <td>35</td>
-                <td>7.3</td>
-            </tr>
-            <tr>
-                <td>40</td>
-                <td>8.1</td>
-            </tr>
-        </tbody>
-    </table>
+				<td>35</td>
+				<td>7.3</td>
+			</tr>
+			<tr>
+				<td>40</td>
+				<td>8.1</td>
+			</tr>
+		</tbody>
+	</table>
 </td>
 <td>
 
 <table>
-        <thead>
+		<thead>
+			<tr>
+				<th>Length</th>
+				<th>Resistance</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>5</td>
+				<td>1.7</td>
+			</tr>
+			<tr>
+				<td>10</td>
+				<td>2.1</td>
+			</tr>
             <tr>
-                <th>Length</th>
-                <th>Resistance</th>
-            </tr>
-        </thead>
-        <tbody>
+				<td>15</td>
+				<td>2.7</td>
+			</tr>
+			<tr>
+				<td>20</td>
+				<td>3.1</td>
+			</tr>
             <tr>
-                <td>5</td>
-                <td>1.7</td>
-            </tr>
+				<td>25</td>
+				<td>3.4</td>
+			</tr>
+			<tr>
+				<td>30</td>
+				<td>3.8</td>
+			</tr>
             <tr>
-                <td>10</td>
-                <td>2.1</td>
-            </tr>
-            <tr>
-                <td>15</td>
-                <td>2.7</td>
-            </tr>
-            <tr>
-                <td>20</td>
-                <td>3.1</td>
-            </tr>
-            <tr>
-                <td>25</td>
-                <td>3.4</td>
-            </tr>
-            <tr>
-                <td>30</td>
-                <td>3.8</td>
-            </tr>
-            <tr>
-                <td>35</td>
-                <td>4.3</td>
-            </tr>
-            <tr>
-                <td>40</td>
-                <td>4.8</td>
-            </tr>
-        </tbody>
-    </table>
+				<td>35</td>
+				<td>4.3</td>
+			</tr>
+			<tr>
+				<td>40</td>
+				<td>4.8</td>
+			</tr>
+		</tbody>
+	</table>
 </td>
 <td>
 <table>
-        <thead>
+		<thead>
+			<tr>
+				<th>Length</th>
+				<th>Resistance</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>5</td>
+				<td>1.5</td>
+			</tr>
+			<tr>
+				<td>10</td>
+				<td>2.0</td>
+			</tr>
             <tr>
-                <th>Length</th>
-                <th>Resistance</th>
-            </tr>
-        </thead>
-        <tbody>
+				<td>15</td>
+				<td>2.2</td>
+			</tr>
+			<tr>
+				<td>20</td>
+				<td>2.4</td>
+			</tr>
             <tr>
-                <td>5</td>
-                <td>1.5</td>
-            </tr>
+				<td>25</td>
+				<td>2.8</td>
+			</tr>
+			<tr>
+				<td>30</td>
+				<td>3.1</td>
+			</tr>
             <tr>
-                <td>10</td>
-                <td>2.0</td>
-            </tr>
-            <tr>
-                <td>15</td>
-                <td>2.2</td>
-            </tr>
-            <tr>
-                <td>20</td>
-                <td>2.4</td>
-            </tr>
-            <tr>
-                <td>25</td>
-                <td>2.8</td>
-            </tr>
-            <tr>
-                <td>30</td>
-                <td>3.1</td>
-            </tr>
-            <tr>
-                <td>35</td>
-                <td>3.5</td>
-            </tr>
-            <tr>
-                <td>40</td>
-                <td>3.8</td>
-            </tr>
-        </tbody>
-    </table>
+				<td>35</td>
+				<td>3.5</td>
+			</tr>
+			<tr>
+				<td>40</td>
+				<td>3.8</td>
+			</tr>
+		</tbody>
+	</table>
 </td></tr> 
 </table>  
 
@@ -151,22 +152,22 @@ After that I did four scatter plots of the data, three of length vs resistance f
 
 <table>
 <tbody>
+			<tr>
+				<td>Length vs resistance with one 1mm wire</td>
+				<td>Length vs resistance with two 1mm wires</td>
+			</tr>
             <tr>
-                <td>Length vs resistance with one 1mm wire</td>
-                <td>Length vs resistance with two 1mm wires</td>
-            </tr>
+				<td><img src="{{ site.baseurl }}/images/2022-05-10-ohms-law/1mmplot.png"></td>
+				<td><img src="{{ site.baseurl }}/images/2022-05-10-ohms-law/2mmplot.png"></td>
+			</tr>
             <tr>
-                <td><img src="{{ site.baseurl }}/images/2022-05-10-ohms-law/1mmplot.png"></td>
-                <td><img src="{{ site.baseurl }}/images/2022-05-10-ohms-law/2mmplot.png"></td>
-            </tr>
+				<td>Length vs resistance with three 1mm wire</td>
+				<td>Area vs resistance at 20cm</td>
+			</tr>
             <tr>
-                <td>Length vs resistance with three 1mm wire</td>
-                <td>Area vs resistance at 20cm</td>
-            </tr>
-            <tr>
-                <td><img src="{{ site.baseurl }}/images/2022-05-10-ohms-law/3mmplot.png"></td>
-                <td><img src="{{ site.baseurl }}/images/2022-05-10-ohms-law/123plot.png"></td>
-            </tr>
+				<td><img src="{{ site.baseurl }}/images/2022-05-10-ohms-law/3mmplot.png"></td>
+				<td><img src="{{ site.baseurl }}/images/2022-05-10-ohms-law/123plot.png"></td>
+			</tr>
             <tr>
             </tr>
 </tbody>
