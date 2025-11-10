@@ -1,0 +1,221 @@
+---
+layout: post
+title: Ohm's law
+categories: [Physics,Data gathering,Experiment]
+excerpt: The semester is almost finished, so I finally get a change to upload something to this blog, I'll begin with the first things we saw on the "Laboratory of electromagnetic devices" class. For this class session we were asked
+---
+
+The semester is almost finished, so I finally get a change to upload something to this blog, I'll begin with the first things we saw on the "Laboratory of electromagnetic devices" class.  
+For this class session we were asked "How does the electric resistance of a wire depends on its length and cross-sectional area?" and then we were given three nichrome wires of 1 mm diameter each, a rule and a multimeter, then I started to take resistance measurements in steps of 5 cm for one, two and three threaded wires  
+
+<table class="centerfy">
+<tr><th>1mm diameter </th><th>2mm diameter</th><th>3mm diameter</th></tr>
+<tr><td>
+
+<table class="centerfy">
+        <thead>
+            <tr>
+                <th>Length</th>
+                <th>Resistance</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>5</td>
+                <td>2.3</td>
+            </tr>
+            <tr>
+                <td>10</td>
+                <td>3.1</td>
+            </tr>
+            <tr>
+                <td>15</td>
+                <td>4.0</td>
+            </tr>
+            <tr>
+                <td>20</td>
+                <td>4.9</td>
+            </tr>
+            <tr>
+                <td>25</td>
+                <td>5.8</td>
+            </tr>
+            <tr>
+                <td>30</td>
+                <td>6.4</td>
+            </tr>
+            <tr>
+                <td>35</td>
+                <td>7.3</td>
+            </tr>
+            <tr>
+                <td>40</td>
+                <td>8.1</td>
+            </tr>
+        </tbody>
+    </table>
+</td>
+<td>
+
+<table>
+        <thead>
+            <tr>
+                <th>Length</th>
+                <th>Resistance</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>5</td>
+                <td>1.7</td>
+            </tr>
+            <tr>
+                <td>10</td>
+                <td>2.1</td>
+            </tr>
+            <tr>
+                <td>15</td>
+                <td>2.7</td>
+            </tr>
+            <tr>
+                <td>20</td>
+                <td>3.1</td>
+            </tr>
+            <tr>
+                <td>25</td>
+                <td>3.4</td>
+            </tr>
+            <tr>
+                <td>30</td>
+                <td>3.8</td>
+            </tr>
+            <tr>
+                <td>35</td>
+                <td>4.3</td>
+            </tr>
+            <tr>
+                <td>40</td>
+                <td>4.8</td>
+            </tr>
+        </tbody>
+    </table>
+</td>
+<td>
+<table>
+        <thead>
+            <tr>
+                <th>Length</th>
+                <th>Resistance</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>5</td>
+                <td>1.5</td>
+            </tr>
+            <tr>
+                <td>10</td>
+                <td>2.0</td>
+            </tr>
+            <tr>
+                <td>15</td>
+                <td>2.2</td>
+            </tr>
+            <tr>
+                <td>20</td>
+                <td>2.4</td>
+            </tr>
+            <tr>
+                <td>25</td>
+                <td>2.8</td>
+            </tr>
+            <tr>
+                <td>30</td>
+                <td>3.1</td>
+            </tr>
+            <tr>
+                <td>35</td>
+                <td>3.5</td>
+            </tr>
+            <tr>
+                <td>40</td>
+                <td>3.8</td>
+            </tr>
+        </tbody>
+    </table>
+</td></tr> 
+</table>  
+
+
+After that I did four scatter plots of the data, three of length vs resistance for each threaded wire and one of cross-sectional area vs resistance at 20 cm of length 
+
+<table>
+<tbody>
+            <tr>
+                <td>Length vs resistance with one 1mm wire</td>
+                <td>Length vs resistance with two 1mm wires</td>
+            </tr>
+            <tr>
+                <td><img src="{{ site.baseurl }}/images/2022-05-10-ohms-law/1mmplot.png"></td>
+                <td><img src="{{ site.baseurl }}/images/2022-05-10-ohms-law/2mmplot.png"></td>
+            </tr>
+            <tr>
+                <td>Length vs resistance with three 1mm wire</td>
+                <td>Area vs resistance at 20cm</td>
+            </tr>
+            <tr>
+                <td><img src="{{ site.baseurl }}/images/2022-05-10-ohms-law/3mmplot.png"></td>
+                <td><img src="{{ site.baseurl }}/images/2022-05-10-ohms-law/123plot.png"></td>
+            </tr>
+            <tr>
+            </tr>
+</tbody>
+</table>  
+ 
+As we can see from the plots, each of them has at least a 92% relation with a linear trend, we can also see that if we take measurements from a greater distance, the resistance goes up, and when we add more wires to the thread the resistance goes down meaning that the resistance of a material is directly proportional to its length and inversely proportional to its cross-sectional area.  
+
+# Why?
+Ok, we got the answer to the question, but why is it that way and not the other way around? To explain this behavior we'll have to look at Ohm's law from the physics side.  
+Everyone knows a little about Ohm's law but from an electric analysis perspective on a "macroscopic" scale
+
+$$I=\frac{V}{R}\Rightarrow V=IR\Rightarrow R=\frac{V}{I}$$
+
+From the physics perspective, we analyze the electric field $$\overrightarrow{E}$$ as it is composed of the scalar product of resistivity in ohm/meter $$\rho$$ and the current density vector per m² $$\overrightarrow{J}$$ 
+
+$$ \overrightarrow{E}=\rho\overrightarrow{J} $$
+
+Then using the definition of voltage between two points of the electric field:
+
+$$ \Delta V=-\int_{}^{}\overrightarrow{E}\cdot dl $$
+
+Where $$dl$$ is the path along the conductor. If the electric field is uniform along the length of the material as it happens with a wire:
+
+<img src="{{ site.baseurl }}/images/2022-05-10-ohms-law/wire.jpg" alt="from https://phys.libretexts.org/Bookshelves/University_Physics/Book%3A_University_Physics_(OpenStax)/Book%3A_University_Physics_II_-_Thermodynamics_Electricity_and_Magnetism_(OpenStax)/09%3A_Current_and_Resistance/9.04%3A_Resistivity_and_Resistance">
+
+Then we can drop the $$\Delta$$ and define voltage $$V$$ and the magnitude $$E$$ as:
+
+$$ V=lE \rightarrow E=\frac{V}{l} $$
+
+And since the electric field is uniform, so is the current density too, which means we can define the magnitude $$J$$ as:
+
+$$ J=\frac{I}{a} $$
+
+Replacing the values of $$\overrightarrow{E}$$ and $$\overrightarrow{J}$$ with these new ones we get:
+
+$$ \overrightarrow{E}=\rho\overrightarrow{J} \rightarrow \frac{V}{l}=\rho\frac{I}{a} $$
+
+Solving for $$V$$:
+
+$$\frac{V}{l}=\rho\frac{I}{a} \rightarrow V=\frac{\rho I l}{a}$$
+
+If we remove $$I$$ from the right side we get
+
+$$\frac{V}{I}=\rho\frac{l}{a}$$
+
+And since $$R=\frac{V}{I}$$ it means that the resistance of a wire is
+
+$$R=\rho\frac{l}{a}$$
+
+Proving that there exists a formula that shows the resistivity is proportional to the length and inversely proportional to the cross-sectional area.
+
+

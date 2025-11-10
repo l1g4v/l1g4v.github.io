@@ -4,7 +4,6 @@ title: Portfolio
 permalink: /portfolio/
 ---
 
-<h1>Portfolio</h1>
 <p>Welcome to my portfolio! Here you'll find a collection of my projects, skills, and experiences.</p>
 
 
