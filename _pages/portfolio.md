@@ -9,7 +9,7 @@ permalink: /portfolio/
 
 <div class="posts">
   {% for post in paginator.posts %}
-  {% if post.is_work %}
+  {% if post.is_work == true %}
     <article class="post">
       <a href="{{ site.baseurl }}{{ post.url }}">
         <h1>{{ post.title }}</h1>
@@ -20,6 +20,7 @@ permalink: /portfolio/
 
       <a href="{{ site.baseurl }}{{ post.url }}" class="read-more">Read More</a>
     </article>
+    
   {% endif %}
   {% endfor %}
 
