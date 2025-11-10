@@ -1,6 +1,7 @@
 ---
 layout: default
 title: Portfolio
+permalink: /portfolio/
 ---
 
 <p>Welcome to my portfolio! Here you'll find a collection of my projects, skills, and experiences.</p>
