@@ -13,7 +13,7 @@ permalink: /portfolio/
     <article class="post">
       <a href="{{ site.baseurl }}{{ post.url }}">
         <h1>{{ post.title }}</h1>
-        <div>
+        <div style="text-align: center">
           <img src="/{{ site.baseurl }}images{{ post.url }}preview.png" alt="{{ post.title }}" width="50%" height="50%"/>
         </div>
       </a>
