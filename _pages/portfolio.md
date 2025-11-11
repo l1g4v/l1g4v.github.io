@@ -14,7 +14,7 @@ permalink: /portfolio/
       <a href="{{ site.baseurl }}{{ post.url }}">
         <h1>{{ post.title }}</h1>
         <div>
-          <p class="post_date">{{ post.date | date: "%B %e, %Y" }}</p>
+          <img src="{{ site.baseurl }}{{ post.url }}/preview.png" alt="{{ post.title }}"/>
         </div>
       </a>
       <div class="entry">
