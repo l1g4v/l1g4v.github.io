@@ -28,7 +28,7 @@ The PCB was manufactured using a professional PCB manufacturing service. The com
 The PCB antenna was tested using a network analyzer to measure its performance and ensure it met the design specifications. The transceiver functionality was verified by establishing communication with another LR1121 module and measuring the signal strength and data transfer rates.
 
  <video width="100%" height="100%" autoplay loop muted>
-  <source src="/images/esp32-diy-relay/test.mp4" type="video/mp4">
+  <source src="/images/lr1121-transceiver/test.mp4" type="video/mp4">
 Your browser does not support the video tag.
 </video> 
 
